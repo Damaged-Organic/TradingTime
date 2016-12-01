@@ -1,0 +1,8 @@
+# src/AppBundle/Resources/translations/responses.en.yml
+feedback:
+    success: Thank you for your feedback!
+    fail:    Something went wrong. Please, try to send the message again
+
+webinar_registration:
+    success: Your request was successfully sent!
+    fail:    Something went wrong. Please, try to register again

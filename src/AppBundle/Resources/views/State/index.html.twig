@@ -1,0 +1,397 @@
+{# src/AppBundle/Resources/views/State/index.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ 'default.title'|trans }} | {{ metadata.title }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ metadata.description }}" >
+    <meta name="robots" content="{{ metadata.robots }}">
+{% endblock %}
+
+{% block locale %}
+    <link rel="canonical" href="{{ url('index') }}" />
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/perfect-scrollbar.css") }}">
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/main.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+        <main id="content" class="clearfix">
+            <div class="section full intro">
+
+                {% include 'AppBundle:Common:header.html.twig' only %}
+
+                <section class="intro-info">
+                    <div class="inner">
+                        <h1>{{ 'index.4th_dimension.title'|trans({'%accent_open%': '<span>', '%accent_close%': '</span>'})|raw }}</h1>
+                        <h2>{{ 'index.4th_dimension.subtitle'|trans }}</h2>
+                        <span class="separator"></span>
+                        {{ 'index.4th_dimension.slogan'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                        <div class="link-button">
+                            <a href="{{ path('study') }}">
+                                <span>{{ 'index.4th_dimension.button'|trans }}</span>
+                            </a>
+                        </div>
+                        <p>
+                            {{ 'index.4th_dimension.esignal'
+                                |trans({
+                                    '%link_open_esignal%': '<a href="' ~ global_personal_links.esignal ~ '" target="_blank">', '%link_close_esignal%': '</a>',
+                                    '%link_open_cqg%': '<a href="' ~ global_personal_links.cqg ~ '" target="_blank">', '%link_close_cqg%': '</a>'
+                                })
+                                |raw
+                            }}
+                        </p>
+                        <ul>
+                            <li><a href="{{ global_personal_links.twitter }}" class="icon-twitter" target="_blank"></a></li>
+                            <li><a href="{{ global_personal_links.youtube }}" class="icon-youtube" target="_blank"></a></li>
+                            <li><a href="{{ global_personal_links.linkedin }}" class="icon-linked" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </section>
+                <div class="intro-4D {{ ( isFuckwit ) ? "ie" : null }}">
+                    <div class="inner">
+                        <div id="pyramide-holder">
+                            <div class="circle"></div>
+                            <div class="circle-label">
+                                <span class="text">{{ 'index.pyramid.top'|trans }}</span>
+                                <span class="icon icon-clock"></span>
+                            </div>
+                            <div class="circle-label bottom">
+                                <span class="icon icon-arrows"></span>
+                                <span class="text">{{ 'index.pyramid.bottom'|trans }}</span>
+                            </div>
+                            <div class="circle-item top-left">
+                                <span>{{ 'index.pyramid.top_left'|trans }}</span>
+                            </div>
+                            <div class="circle-item top-right">
+                                <span>{{ 'index.pyramid.top_right'|trans }}</span>
+                            </div>
+                            <div class="circle-item bottom-right">
+                                <span>{{ 'index.pyramid.bottom_right'|trans }}</span>
+                            </div>
+                            <div class="circle-item bottom-left">
+                                <span>{{ 'index.pyramid.bottom_left'|trans }}</span>
+                            </div>
+                            <div id="pyramide">
+                                <div class="side front">
+                                    <span></span>
+                                </div>
+                                <div class="side left">
+                                    <span></span>
+                                </div>
+                                <div class="side back">
+                                    <span></span>
+                                </div>
+                                <div class="side right">
+                                    <span></span>
+                                </div>
+                                <div class="side bottom">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pyramide-fallback">
+                            <img src="{{ asset('bundles/app/images/pyramide.png') }}" alt="Pyramid">
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-scroll-down">
+                    <p>{{ 'index.scroll_down'|trans() }}</p>
+                    <span class="icon icon-mouse"></span>
+                </div>
+            </div>
+            {% if webinars %}
+                {% set sectionWebinars = sections["webinars"] %}
+                <section class="section event">
+                    <h2>{{ sectionWebinars.title }}</h2>
+                    <h3>
+                        <span>{{ sectionWebinars.subtitle }}</span>
+                    </h3>
+                    <span class="separator"></span>
+                    {% if sectionWebinars.shortDescription %}
+                        <p>{{ sectionWebinars.shortDescription }}</p>
+                    {% endif %}
+                    {% for webinar in webinars %}
+                        <h4>{{ webinar.title }}</h4>
+                        <div class="upccoming-event" data-event-end="{{ webinar.datetime|date('Y/m/d H:i') }}"></div>
+                        {% if webinar.description %}
+                            <p>{{ webinar.description }}</p>
+                        {% endif %}
+                        <div class="link-button s160x40">
+                            <a href="{{ path('webinars') }}">
+                                <span>{{ 'webinar.to_webinars'|trans }}</span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+            {% set sectionTradingTime = sections["trading_time"] %}
+            <section class="section about">
+                <h2>{{ sectionTradingTime.title }}</h2>
+                <h3>
+                    <span>{{ sectionTradingTime.subtitle }}</span>
+                </h3>
+                <span class="separator"></span>
+                {% if sectionTradingTime.shortDescription %}
+                    <p>{{ sectionTradingTime.shortDescription }}</p>
+                {% endif %}
+                <ul>
+                    {% for service in services %}
+                        <li>
+                            <span class="icon icon-{{ service.iconName }}"></span>
+                            <h3>{{ service.title }}</h3>
+                            <span class="lane"></span>
+                            <p>{{ service.subtitle }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% set sectionBooks = sections["books"] %}
+            <section class="section books">
+                <h2>{{ sectionBooks.title }}</h2>
+                <h3><span>{{ sectionBooks.subtitle }}</span></h3>
+                <span class="separator"></span>
+                {% if sectionBooks.shortDescription %}
+                    <p>{{ sectionBooks.shortDescription }}</p>
+                {% endif %}
+                <div class="books-holder">
+                    {% for book in twoTopBooks %}
+                        <div class="book">
+                            <h3>{{ book.title }}</h3>
+
+                            {% include 'AppBundle:Payment:book.html.twig' with {'book': book} only %}
+
+                            <a href="{{ path('books') }}" class="learn-more">learn more</a>
+                            <figure class="cover">
+                                {% if book.awardYear and book.awardTitle %}
+                                    <div class="label">
+                                        <span class="icon icon-precious"></span>
+                                        <span class="year">{{ book.awardYear }}</span>
+                                        <span>{{ book.awardTitle }}</span>
+                                    </div>
+                                {% endif %}
+                                <img src="{{ vich_uploader_asset(book, 'coverFile') }}" alt="{{ book.title }}">
+                            </figure>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% set sectionTrackMyTrade = sections["track_my_trade"] %}
+            <section class="section track-trades">
+                <h2>{{ sectionTrackMyTrade.title }}</h2>
+                <h3><span>{{ sectionTrackMyTrade.subtitle }}</span></h3>
+                <span class="separator"></span>
+                {% if sectionTrackMyTrade.shortDescription %}
+                    <p>{{ sectionTrackMyTrade.shortDescription }}</p>
+                {% endif %}
+                <ul class="subscribe-holder">
+                    <li class="subscribe-stock">
+                        <div class="square-holder">
+                            <div class="square">
+                                <span class="icon icon-graph"></span>
+                                <span class="text">{{ 'track_my_trade.stocks'|trans }}</span>
+                            </div>
+                        </div>
+                        <p>
+                            {{ 'track_my_trade.subscription.monthly'|trans }}
+                            <span>{{ pricing['stocks'].sign ~ pricing['stocks'].price|number_format(2) }}</span>
+                        </p>
+
+                        <div class="link-button s160x40">
+                            <a href="#" class="license-button" data-license="stocks"><span>{{ 'track_my_trade.button.single'|trans }}</span></a>
+                        </div>
+
+                        <span class="or">{{ 'track_my_trade.or'|trans }}</span>
+
+                        <a href="#" class="license-button" data-license="stocks_lifetime">
+                            {{ 'track_my_trade.subscription.lifetime'|trans }}
+                            <span>{{ pricing['stocks_lifetime'].sign ~ pricing['stocks_lifetime'].price|number_format(0) }}</span>
+                        </a>
+
+                    </li>
+                    <li class="subscribe-both">
+                        <h3>{{ 'track_my_trade.both.slogan'|trans }}</h3>
+                        <h4>{{ 'track_my_trade.both.discount'|trans({'%accent_open%': '<span>', '%accent_close%': '</span>'})|raw }}</h4>
+                        <p>{{ 'track_my_trade.subscription.monthly'|trans }} <span>{{ pricing['both'].sign ~ pricing['both'].price|number_format(2) }}</span></p>
+
+                        <div class="link-button s160x40">
+                            <a href="#" class="license-button" data-license="both"><span>{{ 'track_my_trade.button.single'|trans }}</span></a>
+                        </div>
+
+                        <span class="or">{{ 'track_my_trade.or'|trans }}</span>
+
+                        <a href="#" class="license-button" data-license="both_lifetime">
+                            {{ 'track_my_trade.subscription.lifetime'|trans }}
+                            <span>{{ pricing['both_lifetime'].sign ~ pricing['both_lifetime'].price|number_format(0) }}</span>
+                        </a>
+
+                        <section class="trial">
+                            <a href="{{ path('get_in_touch') }}">
+                                <h3>{{ 'track_my_trade.free_trial.topline'|trans }}</h3>
+                                <span>{{ 'track_my_trade.free_trial.period'|trans }}</span>
+                                <p>{{ 'track_my_trade.free_trial.bottomline'|trans }}</p>
+                            </a>
+                        </section>
+                    </li>
+                    <li class="subscribe-others">
+                        <div class="square-holder">
+                            <div class="square">
+                                <span class="icon icon-double-arrows"></span>
+                                <span class="text">{{ 'track_my_trade.indexes'|trans }}</span>
+                            </div>
+                            <div class="square">
+                                <span class="icon icon-arch"></span>
+                                <span class="text">{{ 'track_my_trade.bonds'|trans }}</span>
+                            </div>
+                            <div class="square">
+                                <span class="icon icon-leaves"></span>
+                                <span class="text">{{ 'track_my_trade.commodities'|trans }}</span>
+                            </div>
+                            <div class="square">
+                                <span class="icon icon-cash-bag"></span>
+                                <span class="text">{{ 'track_my_trade.currencies'|trans }}</span>
+                            </div>
+                        </div>
+                        <p>
+                            {{ 'track_my_trade.subscription.monthly'|trans }}
+                            <span>{{ pricing['other'].sign ~ pricing['other'].price|number_format(2) }}</span>
+                        </p>
+
+                        <div class="link-button s160x40">
+                            <a href="#" class="license-button" data-license="other"><span>{{ 'track_my_trade.button.single'|trans }}</span></a>
+                        </div>
+
+                        <span class="or">{{ 'track_my_trade.or'|trans }}</span>
+
+                        <a href="#" class="license-button" data-license="other_lifetime">
+                            {{ 'track_my_trade.subscription.lifetime'|trans }}
+                            <span>{{ pricing['other_lifetime'].sign ~ pricing['other_lifetime'].price|number_format(0) }}</span>
+                        </a>
+
+                    </li>
+                </ul>
+            </section>
+            {% set sectionAboutTheAuthor = sections["about_the_author"] %}
+            <section class="section author">
+                <h2>{{ sectionAboutTheAuthor.title }}</h2>
+                <h3><span>{{ sectionAboutTheAuthor.subtitle }}</span></h3>
+                <span class="separator"></span>
+                {% if sectionAboutTheAuthor.shortDescription %}
+                    <p>{{ sectionAboutTheAuthor.shortDescription }}</p>
+                {% endif %}
+                <ul>
+                    {% for milestone in biography %}
+                        <li>
+                            <span class="icon icon-{{ milestone.iconName }}"></span>
+                            <p>{{ milestone.description }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% set sectionTestimonials = sections["testimonials"] %}
+            <section class="section testimonials">
+                <h2>{{ sectionTestimonials.title }}</h2>
+                <h3>
+                    <span>{{ sectionTestimonials.subtitle }}</span>
+                </h3>
+                <span class="separator"></span>
+                {% if sectionTestimonials.shortDescription %}
+                    <p>{{ sectionTestimonials.shortDescription }}</p>
+                {% endif %}
+                {% if sectionTestimonials.fullDescription %}
+                    <div class="testimonials-description">
+                        {{ sectionTestimonials.fullDescription|raw }}
+                    </div>
+                {% endif %}
+                {% if testimonials %}
+                    <div class="slider-holder">
+                        <ul>
+                            {% for testimonial in testimonials %}
+                                <li>
+                                    <p>"{{ testimonial.quote }}"</p>
+                                    <span>{{ testimonial.author }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        {% if testimonials|length > 3 %}
+                            <div class="arrows arrow-left">
+                                <span class="icon icon-arrow-left"></span>
+                            </div>
+                            <div class="arrows arrow-right">
+                                <span class="icon icon-arrow-right"></span>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </section>
+            <section class="section contacts">
+                <h2>{{ 'get_in_touch.slogan'|trans }}</h2>
+                <p>{{ 'get_in_touch.subtitle'|trans }}</p>
+                <div class="buttons-holder">
+                    <div class="link-button s160x40">
+                        <a href="{{ path('get_in_touch') }}">
+                            <span>{{ 'get_in_touch.button'|trans }}</span>
+                        </a>
+                    </div>
+                    <span class="or">{{ 'study.or'|trans }}</span>
+                    <a href="{{ global_personal_links.infusion }}">{{ 'get_in_touch.form_link'|trans }}</a>
+                </div>
+            </section>
+            <div id="disclaimer">
+                <div class="inner">
+                    <p>{{ 'licence.disclaimer'|trans }}</p>
+                    <div class="link-button s160x40">
+                        <a href="#" class="license-button"><span>{{ 'licence.button'|trans }}</span></a>
+                    </div>
+                </div>
+            </div>
+            <section id="license-holder">
+                <span class="icon icon-close"></span>
+                <div class="inner">
+                    <div id="license">
+                        {{ 'disclosure'|trans({}, 'disclosure')|raw }}
+                    </div>
+                    <div class="license-footer">
+                        <input type="checkbox" name="license_agreement" value="" id="license-agreement">
+                        <label for="license-agreement"><span class="check"></span>{{ 'licence.agreement.sign'|trans }}</label>
+                        <div id="confirm-button">
+
+                            {% include 'AppBundle:Payment:trackMyTradeSubscription.html.twig' with {'item': pricing['stocks'], 'class': 'stocks'} only %}
+
+                            {% include 'AppBundle:Payment:trackMyTradeLifetime.html.twig' with {'item': pricing['stocks_lifetime'], 'class': 'stocks_lifetime' } only %}
+
+                            {% include 'AppBundle:Payment:trackMyTradeSubscription.html.twig' with {'item': pricing['both'], 'class': 'both'} only %}
+
+                            {% include 'AppBundle:Payment:trackMyTradeLifetime.html.twig' with {'item': pricing['both_lifetime'], 'class': 'both_lifetime'} only %}
+
+                            {% include 'AppBundle:Payment:trackMyTradeSubscription.html.twig' with {'item': pricing['other'], 'class': 'other'} only %}
+
+                            {% include 'AppBundle:Payment:trackMyTradeLifetime.html.twig' with {'item': pricing['other_lifetime'], 'class': 'other_lifetime'} only %}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="footer">
+
+                {% include 'AppBundle:Common:footer.html.twig' only %}
+
+            </footer>
+        </main>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/app/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/plugins/countdown.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/plugins/slider.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/controllers/licenseController.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/app/mainApp.js') }}"></script>
+{% endblock %}

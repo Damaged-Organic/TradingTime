@@ -1,0 +1,21 @@
+#custom_user_block {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+#custom_user_block a {
+    color: #3c8dbc;
+}
+
+#custom_user_block a:hover {
+    color: #76afd0;
+    text-decoration: underline;
+}
+
+tbody.sonata-ba-tbody tr td {
+    vertical-align: middle;
+}
+
+.btn.btn-success {
+    margin: 15px 0;
+}

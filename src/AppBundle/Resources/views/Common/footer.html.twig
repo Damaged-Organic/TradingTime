@@ -1,0 +1,14 @@
+{# src/AppBundle/Resources/views/Common/footer.html.twig #}
+<a href="{{ global_developers_agency.link ~ "/" ~ app.request.locale }}" class="cheers-logo">
+    <img src="{{ asset('bundles/app/images/logo_bird.png') }}" alt="{{ global_developers_agency.name }} - Unlimited Web Production">
+</a>
+<small>
+    {{ 'footer'
+        |trans({
+            '%developers_agency_name%': global_developers_agency.name,
+            '%link_open%': "<a href=" ~ global_developers_agency.link ~ "/" ~ app.request.locale ~ " target='_blank'>", '%link_close%': "</a>",
+            '%current_year%': "now"|date('Y')
+        })
+        |raw
+    }}
+</small>

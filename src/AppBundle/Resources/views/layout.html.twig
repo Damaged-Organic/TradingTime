@@ -1,0 +1,36 @@
+{# src/AppBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block favicons %}
+    <meta name="msapplication-TileImage" content="{{ asset('bundles/app/images/favicons/ms/144x144.png') }}">
+    <meta name="msapplication-TileColor" content="#333233">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/57x57.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/60x60.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/72x72.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/76x76.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/114x114.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/120x120.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/144x144.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/152x152.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/images/favicons/apple/180x180.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/images/favicons/16x16.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/images/favicons/32x32.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/images/favicons/96x96.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/images/favicons/160x160.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/images/favicons/192x192.png') }}">
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/fonts.css") }}">
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/tradingTimeIcons.css") }}">
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/reset.css") }}">
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/common.css") }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    {% include "AppBundle:Addon:analytics.html.twig" %}
+{% endblock %}

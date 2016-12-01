@@ -1,0 +1,83 @@
+{# src/AppBundle/Resources/views/State/books.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ metadata.title }} | {{ 'default.title'|trans }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ metadata.description }}" >
+    <meta name="robots" content="{{ metadata.robots }}">
+{% endblock %}
+
+{% block locale %}
+    <link rel="canonical" href="{{ url('books') }}" />
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/books.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+
+        {% include 'AppBundle:Common:header.html.twig' only %}
+
+        <main id="content" class="books sticky-footer clearfix">
+            <section class="section about">
+                <h1>{{ booksSection.title }}</h1>
+                <h3><span>{{ booksSection.subtitle }}</span></h3>
+                <span class="separator"></span>
+                {% if booksSection.fullDescription %}
+                    {{ booksSection.fullDescription|raw }}
+                {% endif %}
+            </section>
+            <div class="grid" id="book-list">
+                {% for book in books %}
+                    {% if loop.first %}
+                        <div class="row">
+                    {% endif %}
+
+                    <div class="cell">
+                        <figure>
+                            {% if book.awardYear and book.awardTitle %}
+                                <div class="label">
+                                    <span class="icon icon-precious"></span>
+                                    <span class="year">{{ book.awardYear }}</span>
+                                    <span>{{ book.awardTitle }}</span>
+                                </div>
+                            {% endif %}
+                            <img src="{{ vich_uploader_asset(book, 'coverFile') }}" alt="{{ book.title }}">
+                        </figure>
+                        <h2>{{ book.title }}</h2>
+                        {{ book.description|raw }}
+                        <span class="price">{{ 'books.priced'|trans }} <span>{{ book.sign ~ book.price|number_format(2) }}</span></span>
+
+                        {% include 'AppBundle:Payment:book.html.twig' with {'book': book} only %}
+
+                        <a href="{{ vich_uploader_asset(book, 'pdfPreviewFile') }}">{{ 'books.pdf'|trans }}</a>
+                    </div>
+
+                    {% if loop.last %}
+                        </div>
+                    {% elseif loop.index is divisible by(2) %}
+                        </div>
+                        <div class="row">
+                    {% endif %}
+                {% else %}
+                    <p>{{ 'books.empty'|trans }}</p>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+    <footer id="footer" class="sticky clearfix">
+
+        {% include 'AppBundle:Common:footer.html.twig' only %}
+
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

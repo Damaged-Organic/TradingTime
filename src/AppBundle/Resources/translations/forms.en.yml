@@ -1,0 +1,28 @@
+# src/AppBundle/Resources/translations/forms.en.yml
+feedback:
+    name:
+        label:       Your name
+        placeholder: Here should be your name
+
+    email:
+        label:       Your e-mail
+        placeholder: Here should be your e-mail
+
+    message:
+        label:       Your message
+        placeholder: What message do you want to send?
+
+    submit:
+        label: Send message
+
+webinar_registration:
+    name:
+        label:       Your name
+        placeholder: Here should be your name
+
+    email:
+        label:       Your e-mail
+        placeholder: Here should be your e-mail
+
+    submit:
+        label: Register

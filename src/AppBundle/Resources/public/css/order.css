@@ -1,0 +1,53 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page{
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#page .inner{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	overflow: hidden;
+}
+#page .inner .logo{
+	width: 80px;
+	height: 80px;
+	margin: 0 auto 10px;
+}
+#page .inner .logo img{
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+#page .inner h2{
+	font-size: 3em;
+	text-transform: capitalize;
+}
+#page .inner p{
+	padding: 0 20%;
+}
+#page .inner .order{
+	display: block;
+	margin: 20px auto;
+	font-size: 1.25em;
+	color: #333233;
+	text-align: center;
+}
+#page .inner span.order > span{
+	display: block;
+	font-size: 1.5em;
+	color: #41806c;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

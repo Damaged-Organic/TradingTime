@@ -1,0 +1,16 @@
+{{#groupBy 2 videos}}
+	<div class="row">
+		{{#each this}}
+			<div class="cell" data-video-id="{{ snippet.resourceId.videoId }}">
+				<h3>{{ snippet.title }}</h3>
+				<div class="preview">
+					<div class="preview">
+						<span class="play-button icon icon-play"></span>
+						<figure><img src="{{ snippet.thumbnails.high.url }}" alt="{{ snippet.title }}"></figure>
+					</div>
+				</div>
+				<div class="video"></div>
+			</div>
+		{{/each}}
+	</div>
+{{/groupBy}}

@@ -1,0 +1,13 @@
+# src/AppBundle/Menu/config/servicesMenu.yml
+services:
+    service.menu.buider:
+        class:     MenuBundle\Menu\MenuBuilder
+        arguments: [ "@knp_menu.factory", "@doctrine.orm.entity_manager" ]
+
+    service.menu.main:
+        class:           Knp\Menu\MenuItem
+        factory_service: service.menu.buider
+        factory_method:  createMainMenu
+        arguments:       [ "@request_stack" ]
+        tags:
+            - { name: knp_menu.menu, alias: main }

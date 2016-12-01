@@ -1,0 +1,4 @@
+{# src/AppBundle/Resources/views/Email/webinarRegistration.html.twig #}
+<p>{{ webinarRegistration.name }} ({{ webinarRegistration.email }}) {{ 'webinar_registration.registered_to_webinar'|trans({}, "emails") }}.</p>
+
+<p>{{ 'webinar_registration.at_date'|trans({}, "emails") }} {{ "now"|date("H:i, d-m-Y") }}.</p>

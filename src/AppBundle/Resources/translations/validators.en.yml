@@ -1,0 +1,25 @@
+# src/AppBundle/Resources/translations/validators.en.yml
+feedback:
+    name:
+        not_blank:  Please, state yourself
+        length_min: This name is too short. Maybe you've made a mistake?
+        length_max: This name is too long. Maybe you've made a mistake?
+
+    email:
+        not_blank: You've forgotten to specify an e-mail
+        valid:     Please, provide a valid email address
+
+    message:
+        not_blank:  You need to actually write a message
+        length_min: Message is too short
+        length_max: Message is too long. Please, shorten it to at least 1500 symbols
+
+webinar_registration:
+    name:
+        not_blank:  Please, state yourself to register
+        length_min: This name is too short. Maybe you've made a mistake?
+        length_max: This name is too long. Maybe you've made a mistake?
+
+    email:
+        not_blank: You've forgotten to specify an e-mail
+        valid:     Please, provide a valid email address

@@ -1,0 +1,22 @@
+{# src/AppBundle/Resources/views/Payment/trackMyTradeSubscription.html.twig #}
+<form action="{{ global_paypal.gateway }}" method="POST" class="{{ class }}">
+    <input type="hidden" name="cmd" value="_xclick-subscriptions">
+    <input type="hidden" name="business" value="{{ global_paypal.business }}">
+    <input type="hidden" name="item_name" value="{{ item.title }}">
+    <input type="hidden" name="item_number" value="{{ item.paymentId }}">
+    <input type="hidden" name="no_shipping" value="1">
+    <input type="hidden" name="src" value="1">
+    <input type="hidden" name="a3" value="{{ item.price|number_format(2) }}">
+    <input type="hidden" name="currency_code" value="{{ item.code }}">
+    <input type="hidden" name="p3" value="1">
+    <input type="hidden" name="t3" value="M">
+    <input type="hidden" name="no_note" value="1">
+    <input type="hidden" name="rm" value="2">
+    <input type="hidden" name="notify_url" value="{{ url('payment') }}">
+    <input type="hidden" name="return" value="{{ url('payment_success') }}">
+    <input type="hidden" name="cancel_return" value="{{ url('payment_fail') }}">
+
+    <button type="submit" name="submit" class="link-button s160x40">
+        <span class="button"><span>{{ 'licence.agreement.button'|trans }}</span></span>
+    </button>
+</form>

@@ -1,0 +1,182 @@
+{# src/AppBundle/Resources/views/State/study.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ metadata.title }} | {{ 'default.title'|trans }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ metadata.description }}" >
+    <meta name="robots" content="{{ metadata.robots }}">
+{% endblock %}
+
+{% block locale %}
+    <link rel="canonical" href="{{ url('study') }}" />
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/perfect-scrollbar.css") }}">
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/study.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+
+        {% include 'AppBundle:Common:header.html.twig' only %}
+
+        <main id="content" class="study clearfix">
+            <div class="grid about clearfix">
+                <div class="cell">
+                    <section class="inner">
+                        <h1>{{ 'index.4th_dimension.title'|trans({'%accent_open%': '<span>', '%accent_close%': '</span>'})|raw }}</h1>
+                        <h2>{{ fourthDimensionSection.subtitle }}</h2>
+                        <span class="separator"></span>
+                        {% if fourthDimensionSection.fullDescription %}
+                            {{ fourthDimensionSection.fullDescription|raw }}
+                        {% endif %}
+                        <div class="button-holder">
+                            <p>{{ 'study.subscription.monthly'|trans({'%accent_open%': '<span>', '%accent_close%': '</span>'})|raw }}</p>
+                            <div class="link-button s160x40">
+                                <a href="{{ global_personal_links.esignal }}" title="eSignal" target="_blank"><span>{{ 'study.button'|trans }}</span></a>
+                            </div>
+                        </div>
+                        <div class="button-holder">
+                            <span class="or">{{ 'study.or'|trans }}</span>
+
+                            <a href="#" class="license-button" data-license="fourth_dimension">
+                                {{ 'study.subscription.lifetime'|trans({'%accent_open%': '<span>', '%accent_close%': '</span>'})|raw }}
+                                <span>{{ pricing['fourth_dimension'].sign ~ pricing['fourth_dimension'].price|number_format(0) }}</span>
+                            </a>
+
+                        </div>
+                    </section>
+                </div>
+                <div class="cell">
+                    <section class="inner">
+                        <ul>
+                            <li>
+                                <span class="icon icon-indicator"></span>
+                                <p>{{ 'study.features.indicator'|trans }}</p>
+                            </li>
+                            <li>
+                                <span class="icon icon-view"></span>
+                                <p>{{ 'study.features.view'|trans }}</p>
+                            </li>
+                            <li>
+                                <span class="icon icon-trend"></span>
+                                <p>{{ 'study.features.trend'|trans }}</p>
+                            </li>
+                            <li>
+                                <span class="icon icon-breakout"></span>
+                                <p>{{ 'study.features.breakout'|trans }}</p>
+                            </li>
+                            <li>
+                                <span class="icon icon-arrows"></span>
+                                <p>{{ 'study.features.arrows'|trans }}</p>
+                            </li>
+                            <li>
+                                <span class="icon icon-clock"></span>
+                                <p>{{ 'study.features.clock'|trans }}</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <section class="section benefits clearfix">
+                <h2>{{ detailsBenefitsSection.title }}</h2>
+                <h3><span>{{ detailsBenefitsSection.subtitle }}</span></h3>
+                <span class="separator"></span>
+                {% if detailsBenefitsSection.fullDescription %}
+                    {{ detailsBenefitsSection.fullDescription|raw }}
+                {% endif %}
+                <ul>
+                    <li>
+                        <span class="icon icon-sand-clock"></span>
+                        <p>{{ 'study.benefits.clock'|trans }}</p>
+                    </li>
+                    <li>
+                        <span class="icon icon-american-stocks"></span>
+                        <p>{{ 'study.benefits.stocks'|trans }}</p>
+                    </li>
+                    <li>
+                        <span class="icon icon-trade-tool"></span>
+                        <p>{{ 'study.benefits.tool'|trans }}</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="section studies clearfix">
+                <h2>{{ 'study.list.title'|trans }}</h2>
+                <span class="separator"></span>
+                <div class="grid" id="studies-list">
+                    {% for indicator in indicators %}
+                        {% if loop.first %}
+                            <div class="row">
+                        {% endif %}
+
+                        <div class="cell" {{ ( indicator.videoId ) ? 'data-video-id=' ~ indicator.videoId ~ '' }}>
+                            <article class="inner">
+                                <h2>{{ indicator.title }}</h2>
+                                <span class="lane"></span>
+                                <div class="link-button s160x40">
+                                    <a href="{{ vich_uploader_asset(indicator, 'pdfGuideFile') }}"><span>{{ 'study.list.pdf'|trans }}</span></a>
+                                </div>
+                                {% if indicator.videoId %}
+                                    <span class="video-button">{{ 'study.list.video'|trans }}</span>
+                                {% endif %}
+                            </article>
+                            {% if indicator.videoId %}
+                                <div class="video-holder">
+                                    <div class="inner">
+                                        <span class="icon icon-close"></span>
+                                        <div class="video"></div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        {% if loop.last %}
+                            </div>
+                        {% elseif loop.index is divisible by(4) %}
+                            </div>
+                            <div class="row">
+                        {% endif %}
+                    {% else %}
+                        <p>{{ 'study.list.empty'|trans }}</p>
+                    {% endfor %}
+                </div>
+            </section>
+            <section id="license-holder">
+                <span class="icon icon-close"></span>
+                <div class="inner">
+                    <div id="license">
+                        {{ 'disclosure'|trans({}, 'disclosure')|raw }}
+                    </div>
+                    <div class="license-footer">
+                        <input type="checkbox" name="license_agreement" value="" id="license-agreement">
+                        <label for="license-agreement"><span class="check"></span>{{ 'licence.agreement.sign'|trans }}</label>
+                        <div id="confirm-button">
+
+                            {% include 'AppBundle:Payment:study.html.twig' with {'item': pricing['fourth_dimension'], 'class': 'fourth_dimension'} only %}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="footer">
+
+                {% include 'AppBundle:Common:footer.html.twig' only %}
+
+            </footer>
+        </main>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/app/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/directives/playerDirective.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/controllers/studyController.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/controllers/licenseController.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/app/studyApp.js') }}"></script>
+{% endblock %}

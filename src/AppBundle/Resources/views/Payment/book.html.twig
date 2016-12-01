@@ -1,0 +1,19 @@
+{# src/AppBundle/Resources/views/Payment/book.html.twig #}
+<form action="{{ global_paypal.gateway }}" method="POST">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="{{ global_paypal.business }}">
+    <input type="hidden" name="item_name" value="{{ book.title }}">
+    <input type="hidden" name="item_number" value="{{ book.paymentId }}">
+    <input type="hidden" name="quantity" value="1">
+    <input type="hidden" name="amount" value="{{ book.price|number_format(2) }}">
+    <input type="hidden" name="currency_code" value="{{ book.code }}">
+    <input type="hidden" name="no_shipping" value="0">
+    <input type="hidden" name="rm" value="2">
+    <input type="hidden" name="notify_url" value="{{ url('payment') }}">
+    <input type="hidden" name="return" value="{{ url('payment_success') }}">
+    <input type="hidden" name="cancel_return" value="{{ url('payment_fail') }}">
+
+    <button type="submit" name="submit" class="link-button s160x40">
+        <span class="button"><span>{{ 'books.buy'|trans }}</span></span>
+    </button>
+</form>

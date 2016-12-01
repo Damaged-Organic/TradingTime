@@ -1,0 +1,191 @@
+# app/config/common/config_sonata_admin.yml
+doctrine:
+    dbal:
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    SonataUserBundle: ~
+                    FOSUserBundle: ~
+                    ApplicationSonataUserBundle: ~
+
+twig:
+    form:
+        resources:
+            - 'SonataCoreBundle:Form:datepicker.html.twig'
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+        sonata.admin.block.search_result:
+            contexts: [admin]
+        sonata.user.block.menu:
+        sonata.user.block.account:
+        sonata.block.service.text:
+
+parameters:
+    sonata.user.admin.user.class: AppBundle\Admin\UserAdmin
+
+sonata_user:
+    #security_acl: true
+    manager_type: orm
+    class:
+        user:  Application\Sonata\UserBundle\Entity\User
+        group: Application\Sonata\UserBundle\Entity\Group
+
+fos_user:
+    db_driver:     orm
+    firewall_name: main
+    user_class:    Application\Sonata\UserBundle\Entity\User
+
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+
+    service:
+        user_manager: sonata.user.orm.user_manager
+
+sonata_admin:
+    title:      "Dashboard"
+    dashboard:
+        blocks:
+            -
+                position: left
+                type:     sonata.admin.block.admin_list
+            -
+                position: right
+                type:     sonata.block.service.text
+                settings:
+                    content: >
+                        <h2>Content Management System</h2>
+                        <p>
+                            Sections of your website you're allowed to moderate:
+                        </p>
+                        <p>
+                            <h4>Webinar</h4>
+                            To set up an upcoming event.
+                        </p>
+                        <p>
+                            <h4>Books & Indicators</h4>
+                            Section to add, delete or update books and study indicators as well as related information.
+                        </p>
+                        <p>
+                            <h4>Text sections</h4>
+                            Block to edit texts across the website, including all headlines and sections description,
+                            homepage services and biography.
+                        </p>
+                        <p>
+                            <h4>Orders & Pricing</h4>
+                            Price list of services and PayPal orders list.
+                        </p>
+                        <p>
+                            <h4>SEO (Search Engines Optimization)</h4>
+                            Primarily technical information for search web crawlers.
+                        </p>
+    templates:
+        layout:     ApplicationSonataUserBundle:Admin:standard_layout.html.twig
+        user_block: ApplicationSonataUserBundle:Admin\Core:user_block.html.twig
+
+services:
+    sonata.user.admin.group:
+        abstract: true
+        public:   false
+
+    sonata.user.admin.user:
+        abstract: true
+        public:   false
+
+    sonata.admin.webinar:
+        class: AppBundle\Admin\Fixed\WebinarAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Webinar", label: "Webinar" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Fixed\Webinar
+            - ~
+
+    sonata.admin.book:
+        class: AppBundle\Admin\BookAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Books & Indicators", label: "Books" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Book
+            - ~
+
+    sonata.admin.indicator:
+        class: AppBundle\Admin\IndicatorAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Books & Indicators", label: "Study Indicators" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Indicator
+            - ~
+
+    sonata.admin.fixed.section:
+        class: AppBundle\Admin\Fixed\SectionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Text sections", label: "Website sections" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Fixed\Section
+            - ~
+
+    sonata.admin.fixed.service:
+        class: AppBundle\Admin\Fixed\ServiceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Text sections", label: "Homepage services" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Fixed\Service
+            - ~
+
+    sonata.admin.fixed.biography:
+        class: AppBundle\Admin\Fixed\BiographyAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Text sections", label: "Homepage biography" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Fixed\Biography
+            - ~
+
+    sonata.admin.testimonial:
+        class: AppBundle\Admin\TestimonialAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Text sections", label: "Testimonials" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Testimonial
+            - ~
+
+    sonata.admin.fixed.pricing:
+        class: AppBundle\Admin\Fixed\PricingAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Orders & Pricing", label: "Pricing" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Fixed\Pricing
+            - ~
+
+    sonata.admin.payment_order:
+        class: AppBundle\Admin\PaymentOrderAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Orders & Pricing", label: "Orders" }
+        arguments:
+            - ~
+            - AppBundle\Entity\PaymentOrder
+            - ~
+
+    sonata.admin.metadata:
+        class: AppBundle\Admin\MetadataAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "SEO", label: "Metadata" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Metadata
+            - ~

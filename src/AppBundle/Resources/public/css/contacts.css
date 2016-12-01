@@ -1,0 +1,50 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	feedback start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#feedback h1{ margin-top: 40px; }
+#feedback h2{ font-size: 1.125em; }
+.form-holder{
+	width: 100%;
+	max-width: 800px;
+	margin: 20px auto;
+}
+#feedback-form textarea{
+	height: 150px;
+	resize: none;
+	padding: 10px 0;
+}
+#feedback-form button{
+	margin: 20px auto 10px;
+}
+#feedback-form button span.loading{
+	font-size: 1.875em;
+}
+#feedback .or{
+	display: block;
+	font-size: 0.875em;
+	color: #333233;
+	text-align: center;
+}
+#feedback .tell-us{
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+	color: #41806c;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+#feedback .tell-us:hover{ color: #69cc7c; }
+
+#response-holder{
+	width: 100%;
+	overflow: hidden;
+}
+#response-holder p{
+	font-size: 1.125em;
+}
+#response-holder.success p{ color: #4F8A10; }
+#response-holder.error p{ color: #D8000C; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	feedback end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -1,0 +1,84 @@
+{# src/AppBundle/Resources/views/State/webinars.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ metadata.title }} | {{ 'default.title'|trans }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ metadata.description }}" >
+    <meta name="robots" content="{{ metadata.robots }}">
+{% endblock %}
+
+{% block locale %}
+    <link rel="canonical" href="{{ url('webinars') }}" />
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/webinars.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+
+        {% include 'AppBundle:Common:header.html.twig' only %}
+
+        <main id="content" class="webinars sticky-footer clearfix">
+            <section class="section about">
+                <h1>{{ webinarsSection.title }}</h1>
+                <h3><span>{{ webinarsSection.subtitle }}</span></h3>
+                <span class="separator"></span>
+                {% if webinarsSection.fullDescription %}
+                    {{ webinarsSection.fullDescription|raw }}
+                {% endif %}
+
+            </section>
+            <div class="grid" id="webinars-list">
+                {% if webinars %}
+                    <h2>{{ 'webinar.announced'|trans }}</h2>
+                    {% for webinar in webinars %}
+                        <article id="event">
+                            <span class="separator"></span>
+                            <h3>{{ webinar.title }}</h3>
+                            <div id="event-countdown" data-event-end="{{ webinar.datetime|date('Y/m/d H:i:s') }}"></div>
+                            {% if webinar.description %}
+                                <p>{{ webinar.description }}</p>
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                    <section id="web-reg-holder" class="clearfix">
+                        <h3>Fill the form below to join our webinars!</h3>
+
+                        {% render controller('AppBundle:Form:webinarRegistrationForm') %}
+
+                        <div id="response-holder" class="clearfix"></div>
+                    </section>
+                {% else %}
+                    <article id="event">
+                        <div id="event-countdown" data-event-end="{{ 'now'|date('Y/m/d H:i:s') }}"></div>
+                    </article>
+                {% endif %}
+            </div>
+        </main>
+    </div>
+    <footer id="footer" class="sticky clearfix">
+
+        {% include 'AppBundle:Common:footer.html.twig' only %}
+
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="{{ asset('bundles/app/js/plugins/countdown.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/helpers/helpers.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/mixins/loadTemplate.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/services/youtubeService.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/services/webRegistrationService.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/controllers/webinarController.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/controllers/webRegistrationController.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/app/webinarApp.js') }}"></script>
+{% endblock %}

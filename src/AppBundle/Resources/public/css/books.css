@@ -1,0 +1,114 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content .section{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#content.books .section > h3{
+	text-transform: capitalize;
+}
+#content.books .section > h3 > span{
+	display: inline-block;
+}
+#content.books .section > h3 > span:first-letter{
+	color: #41806c;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about  start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.books .about h1{ margin-top: 40px; }
+.books .about p{ padding: 0 5%; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about  end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	book list start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#book-list{
+	max-width: 1200px;
+	margin: 60px auto 40px;
+	overflow: hidden;
+}
+#book-list .row{
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+#book-list .cell{
+	width: 45%;
+	float: left;
+	margin-left: 10%;
+	text-align: center;
+	overflow: hidden;
+}
+#book-list .cell:first-child{ margin-left: 0; }
+#book-list .cell figure{
+	width: 60%;
+	height: auto;
+	margin: 0 auto;
+	border-bottom: 1px solid #333233;
+	position: relative;
+	overflow: hidden;
+}
+#book-list .cell figure img{
+	width: 76%;
+	height: auto;
+	margin: 0 auto;
+	margin-bottom: -25%;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+}
+#book-list .cell figure .label{
+	width: 76%;
+	height: 80px;
+	position: absolute;
+	left: 12%;
+	bottom: 0;
+	background: rgba(0, 0, 0, .7);
+	overflow: hidden;
+}
+#book-list .cell figure .label span{
+	display: block;
+	text-align: center;
+	font-size: 0.875em;
+	color: #f4f9f5;
+}
+#book-list .cell figure .label span:first-child{
+	margin-top: 15px;
+}
+#book-list .cell h2{
+	margin-top: 10px;
+	font-size: 1.25em;
+}
+#book-list .cell p{
+	padding: 5px 10px;
+}
+#book-list .cell .price{
+	display: block;
+	text-align: center;
+	font-size: 1.125em;
+	margin-top: 5px;
+}
+#book-list .cell .price span{
+	color: #41806c;
+}
+#book-list .cell .link-button{
+	margin: 10px auto 5px;
+}
+#book-list .cell > a{
+	display: inline-block;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+#book-list .cell > a:hover{
+	color: #69cc7c;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	book list end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

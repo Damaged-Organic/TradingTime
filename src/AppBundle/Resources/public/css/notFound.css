@@ -1,0 +1,136 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page{
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#page .inner{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	overflow: hidden;
+}
+#page .inner .error{
+	display: block;
+	width: 400px;
+	margin: 20px auto 20px;
+	text-align: center;
+	overflow: hidden;
+}
+#page .inner .error > span{
+	display: inline-block;
+	white-space: -1;
+	font-size: 6em;
+	color: #333233;
+}
+#page .inner .error > span:nth-child(2){
+	color: #D8000C;
+}
+
+#page .inner .error > span:nth-child(1),
+#page .inner .error > span:nth-child(3){
+	-webkit-animation: shake 3s ease 0s infinite;
+	-moz-animation: shake 3s ease 0s infinite;
+	-o-animation: shake 3s ease 0s infinite;
+	animation: shake 3s ease 0s infinite;
+}
+@-webkit-keyframes shake{
+	0% { -webkit-transform: rotate(0deg); }
+	2% { -webkit-transform: rotate(2deg); }
+	4% { -webkit-transform: rotate(-2deg); }
+	8% { -webkit-transform: rotate(3deg); }
+	10% { -webkit-transform: rotate(-3deg); }
+	12% { -webkit-transform: rotate(4deg); }
+	14% { -webkit-transform: rotate(-4deg); }
+	16% { -webkit-transform: rotate(5deg); }
+	18% { -webkit-transform: rotate(-5deg); }
+	20% { -webkit-transform: rotate(6deg); }
+	22% { -webkit-transform: rotate(-6deg); }
+	24% { -webkit-transform: rotate(5deg); }
+	26% { -webkit-transform: rotate(-5deg); }
+	28% { -webkit-transform: rotate(4deg); }
+	30% { -webkit-transform: rotate(-4deg); }
+	32% { -webkit-transform: rotate(3deg); }
+	34% { -webkit-transform: rotate(-3deg); }
+	36% { -webkit-transform: rotate(2deg); }
+	38% { -webkit-transform: rotate(-2deg); }
+	100% { -webkit-transform: rotate(0deg); }	
+}
+@-moz-keyframes shake{
+	0% { -moz-transform: rotate(0deg); }
+	2% { -moz-transform: rotate(2deg); }
+	4% { -moz-transform: rotate(-2deg); }
+	8% { -moz-transform: rotate(3deg); }
+	10% { -moz-transform: rotate(-3deg); }
+	12% { -moz-transform: rotate(4deg); }
+	14% { -moz-transform: rotate(-4deg); }
+	16% { -moz-transform: rotate(5deg); }
+	18% { -moz-transform: rotate(-5deg); }
+	20% { -moz-transform: rotate(6deg); }
+	22% { -moz-transform: rotate(-6deg); }
+	24% { -moz-transform: rotate(5deg); }
+	26% { -moz-transform: rotate(-5deg); }
+	28% { -moz-transform: rotate(4deg); }
+	30% { -moz-transform: rotate(-4deg); }
+	32% { -moz-transform: rotate(3deg); }
+	34% { -moz-transform: rotate(-3deg); }
+	36% { -moz-transform: rotate(2deg); }
+	38% { -moz-transform: rotate(-2deg); }
+	100% { -moz-transform: rotate(0deg); }	
+}
+@-o-keyframes shake{
+	0% { -o-transform: rotate(0deg); }
+	2% { -o-transform: rotate(2deg); }
+	4% { -o-transform: rotate(-2deg); }
+	8% { -o-transform: rotate(3deg); }
+	10% { -o-transform: rotate(-3deg); }
+	12% { -o-transform: rotate(4deg); }
+	14% { -o-transform: rotate(-4deg); }
+	16% { -o-transform: rotate(5deg); }
+	18% { -o-transform: rotate(-5deg); }
+	20% { -o-transform: rotate(6deg); }
+	22% { -o-transform: rotate(-6deg); }
+	24% { -o-transform: rotate(5deg); }
+	26% { -o-transform: rotate(-5deg); }
+	28% { -o-transform: rotate(4deg); }
+	30% { -o-transform: rotate(-4deg); }
+	32% { -o-transform: rotate(3deg); }
+	34% { -o-transform: rotate(-3deg); }
+	36% { -o-transform: rotate(2deg); }
+	38% { -o-transform: rotate(-2deg); }
+	100% { -o-transform: rotate(0deg); }	
+}
+@keyframes shake{
+	0% { transform: rotate(0deg); }
+	2% { transform: rotate(2deg); }
+	4% { transform: rotate(-2deg); }
+	8% { transform: rotate(3deg); }
+	10% { transform: rotate(-3deg); }
+	12% { transform: rotate(4deg); }
+	14% { transform: rotate(-4deg); }
+	16% { transform: rotate(5deg); }
+	18% { transform: rotate(-5deg); }
+	20% { transform: rotate(6deg); }
+	22% { transform: rotate(-6deg); }
+	24% { transform: rotate(5deg); }
+	26% { transform: rotate(-5deg); }
+	28% { transform: rotate(4deg); }
+	30% { transform: rotate(-4deg); }
+	32% { transform: rotate(3deg); }
+	34% { transform: rotate(-3deg); }
+	36% { transform: rotate(2deg); }
+	38% { transform: rotate(-2deg); }
+	100% { transform: rotate(0deg); }	
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

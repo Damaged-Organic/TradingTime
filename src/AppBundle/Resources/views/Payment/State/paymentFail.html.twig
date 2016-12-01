@@ -1,0 +1,32 @@
+{# src/AppBundle/Resources/views/Payment/paymentFail.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ 'payment.fail.title'|trans }} | {{ 'default.title'|trans }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/order.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+        <section class="inner">
+            <div class="logo"><img src="{{ asset('bundles/app/images/logo-black.png') }}" alt="Logo"></div>
+            <h2>{{ 'payment.fail.title'|trans|upper }}</h2>
+            <span class="separator"></span>
+            {% if txnID %}
+                <span class="order">{{ 'payment.order'|trans }} <span>#{{ txnID }}</span></span>
+            {% endif %}
+            <p>{{ 'payment.fail.text'|trans({'%first_name%': firstName, '%last_name%': lastName}) }}</p>
+            <div class="link-button s160x40">
+                <a href="{{ path('index') }}">
+                    <span>{{ 'payment.homepage_link'|trans }}</span>
+                </a>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

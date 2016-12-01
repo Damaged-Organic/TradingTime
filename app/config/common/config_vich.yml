@@ -1,0 +1,38 @@
+# app/config/common/config_vich.yml
+twig:
+    form_themes:
+        - 'VichUploaderBundle:Form:fields.html.twig'
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        book_cover:
+            uri_prefix:         /uploads/books/covers
+            upload_destination: %kernel.root_dir%/../www/uploads/books/covers
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     true
+            delete_on_remove:   true
+            delete_on_update:   true
+
+        book_pdf_preview:
+            uri_prefix:         /uploads/books/pdf_previews
+            upload_destination: %kernel.root_dir%/../www/uploads/books/pdf_previews
+            inject_on_load:     true
+            delete_on_remove:   true
+            delete_on_update:   true
+
+        indicator_image:
+            uri_prefix:         /uploads/indicators/images
+            upload_destination: %kernel.root_dir%/../www/uploads/indicators/images
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     true
+            delete_on_remove:   true
+            delete_on_update:   true
+
+        indicator_pdf_guide:
+            uri_prefix:         /uploads/indicators/pdf_guides
+            upload_destination: %kernel.root_dir%/../www/uploads/indicators/pdf_guides
+            inject_on_load:     true
+            delete_on_remove:   true
+            delete_on_update:   true

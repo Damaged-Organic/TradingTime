@@ -1,0 +1,334 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#page{ height: 100%; }
+#content,
+.grid,
+.grid .cell{
+	height: 100%;
+}
+.study .about .cell{
+	width: 50%;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.study .about .cell .inner{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	overflow: hidden;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#header{
+	position: absolute;
+	z-index: 20;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	header end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.study .about h1{ margin-top: 60px; }
+.study .about h1 > span{
+	display: inline-block;
+	text-transform: uppercase;
+}
+.study .about h1 > span:first-letter{ color: #41806c; }
+.study .about h2{
+	padding: 0 5%;
+	font-size: 1.125em;
+}
+.study .about p{ padding: 0 5% 20px; }
+
+.study .about .cell .button-holder:last-child{
+	text-align: center;
+}
+.study .about .cell .button-holder p{
+	font-size: 1em;
+	padding: 0 25% 5px;
+}
+.study .about .cell .button-holder p > span{
+	color: #41806c;
+}
+.study .about .button-holder{
+	width: 100%;
+	overflow: hidden;
+}
+.study .about .link-button{ margin: 5px auto; }
+
+.study .about .button-holder .or{
+	display: block;
+	font-size: 1em;
+	margin: 10px auto;
+	color: #41806c;
+}
+.study .about .button-holder > a{
+	display: inline-block;
+	font-size: 1em;
+}
+.study .about .button-holder > a span{
+	display: inline-block;
+	padding-left: 5px;
+	color: #41806c;
+}
+.study .about .button-holder > a:hover,
+.study .about .button-holder > a:hover span{
+	color: #69cc7c;
+}
+
+.study .about .cell ul{
+	width: 500px;
+	margin: 30px auto 0;
+	overflow: hidden;
+}
+.study .about .cell ul li{
+	display: block;
+	width: 160px;
+	height: 140px;
+	float: left;
+	background: #333233;
+	border-radius: 5px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.study .about .cell ul li:nth-child(3n+2){
+	margin: 10px 10px 0;
+}
+.study .about .cell ul li .icon{
+	display: block;
+	width: 60px;
+	height: 60px;
+	font-size: 3em;
+	text-align: center;
+	line-height: 60px; 
+	margin: 25px auto 0;
+	color: #41806c;
+}
+.study .about .cell ul li p{
+	padding: 0 20px;
+	color: #f4f9f5;
+	text-align: center;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	benefits start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.study .benefits{
+	max-width: 1200px;
+	margin: 0 auto 40px;
+	overflow: hidden;
+}
+.study .benefits h3 > span{
+	display: inline-block;
+	text-transform: capitalize;
+}
+.study .benefits h3 > span:first-letter{ color: #41806c; }
+.study .benefits p{
+	padding: 0 5%;
+}
+.study .benefits ul{
+	max-width: 1000px;
+	margin: 60px auto 40px;
+	overflow: hidden;
+	text-align: center;
+}
+.study .benefits ul li{
+	display: inline-block;
+	width: 30%;
+}
+.study .benefits ul li .icon{
+	font-size: 2.5em;
+	color: #41806c;
+}
+.study .benefits ul li p{
+	font-size: 1.125em;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	benefits end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	studies start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.studies{ margin-bottom: 40px; }
+
+#studies-list{
+	max-width: 1200px;
+	margin: 20px auto 40px;
+	overflow: hidden;
+}
+#studies-list .row{
+	margin-bottom: 1.851852%;
+	overflow: hidden;
+}
+#studies-list .cell{
+	width: 23.7499997%;
+	padding-top: 23.7499997%;
+	position: relative;
+	float: left;
+	margin-left: 1.666667%;
+}
+#studies-list .cell:first-child{
+	margin-left: 0;
+}
+#studies-list .cell:before{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	border-radius: 5px;
+	background: #333233;
+	overflow: hidden;
+}
+#studies-list .inner{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 10;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+#studies-list .inner h2{
+	color: #f4f9f5;
+	font-size: 1.125em;
+	padding: 0 20px;
+}
+#studies-list .inner .lane{
+	display: block;
+	width: 30%;
+	height: 1px;
+	background: #f4f9f5;
+	margin: 10px auto 20px;
+	overflow: hidden;
+}
+#studies-list .inner .link-button{
+	margin: 0 auto;
+}
+#studies-list .inner .video-button{
+	display: block;
+	width: 120px;
+	height: 40px;
+	margin: 0px auto 0;
+	font-size: 0.875em;
+	color: #f4f9f5;
+	text-align: center;
+	cursor: pointer;
+	line-height: 40px;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+#studies-list .inner .video-button:hover{
+	color: #69cc7c;
+}
+#studies-list .cell .video-holder{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-transition: all .5s ease .5s;
+	-o-transition: all .5s ease .5s;
+	transition: all .5s ease .5s;
+	-webkit-transform: translateY(-100%) scale(0);
+	-ms-transform: translateY(-100%) scale(0);
+	-o-transform: translateY(-100%) scale(0);
+	transform: translateY(-100%) scale(0);
+}
+#studies-list .cell .video-holder .inner{
+	display: block;
+	width: 720px;
+	height: 405px;
+	min-height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -202.5px 0 0 -360px;
+	background: #f4f9f5;
+	opacity: 0;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+#studies-list .cell .video-holder .inner .video{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#studies-list .cell .video-holder .inner .icon{
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0px;
+	right: -40px;
+	font-size: 1.5em;
+	color: #333233;
+	line-height: 40px;
+	text-align: center;
+	background: #f4f9f5;
+	cursor: pointer;
+	overflow: hidden;
+}
+#studies-list .cell .video-holder .inner .icon:before{
+	display: block;
+	margin-top: 8px;
+}
+#studies-list .cell.active .video-holder{
+	-webkit-transition: all .5s ease 0s;
+	-o-transition: all .5s ease 0s;
+	transition: all .5s ease 0s;
+	-webkit-transform: translateY(0%) scale(1);
+	-ms-transform: translateY(0%) scale(1);
+	-o-transform: translateY(0%) scale(1);
+	transform: translateY(0%) scale(1);
+}
+#studies-list .cell.active .video-holder .inner{
+	-webkit-transition: all .5s ease .5s;
+	-o-transition: all .5s ease .5s;
+	transition: all .5s ease .5s;
+	-webkit-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	transform: translateY(0%);
+	opacity: 1;
+}
+
+#studies-list .cell.active .video-holder .inner iframe{
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	studies end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

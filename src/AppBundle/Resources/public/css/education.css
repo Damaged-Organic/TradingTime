@@ -1,0 +1,170 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content .section{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#content.education .section > h3{
+	text-transform: capitalize;
+}
+#content.education .section > h3 > span{
+	display: inline-block;
+}
+#content.education .section > h3 > span:first-letter{
+	color: #41806c;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about  start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.education .about h1{ margin-top: 40px; }
+.education .about p{ padding: 0 5%; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about  end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	education list start										*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#education-list{
+	max-width: 1200px;
+	margin: 60px auto 20px;
+	overflow: hidden;
+}
+#education-list .row{
+	width: 100%;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+#education-list .cell{
+	width: 49%;
+	float: left;
+	margin-left: 2%;
+	overflow: hidden;
+}
+#education-list .row .cell:first-child{ margin-left: 0; }
+
+#education-list .cell h3{
+	text-transform: capitalize;
+	margin-bottom: 10px;
+}
+#education-list .cell .preview,
+#education-list .cell .video{
+	display: none;
+	width: 100%;
+	height: 360px;
+	overflow: hidden;
+}
+#education-list .cell .preview{
+	display: block;
+	position: relative;
+}
+#education-list .cell .preview:before{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	background: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+}
+#education-list .cell .preview figure{
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#education-list .cell .preview figure img{
+	width: 100%;
+	height: 100%;
+}
+#education-list .cell .preview .play-button{
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -30px 0 0 -30px;
+	color: #41806c;
+	font-size: 3em;
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+#education-list .cell .preview .play-button:before{
+	display: inline-block;
+	line-height: 60px;
+}
+#education-list .cell .preview .play-button:hover{
+	color: #69cc7c;
+}
+#education-list .cell .video img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+#education-list .cell .video iframe{
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#education-list .cell.active .preview{ display: none; }
+#education-list .cell.active .video{ display: block; }
+
+#load-button{
+	position: relative;
+	margin-bottom: 40px;
+	pointer-events: auto;
+}
+#load-button .icon{
+	display: none;
+	width: 40px;
+	height: 40px;
+	font-size: 1.75em;
+	top: -1px;
+	left: 50%;
+	margin-left: -20px;
+	-webkit-animation: spin .5s linear 0s infinite;
+	-moz-animation: spin .5s linear 0s infinite;
+	-o-animation: spin .5s linear 0s infinite;
+	animation: spin .5s linear 0s infinite;
+}
+@-webkit-keyframes spin{
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin{
+	0% { -moz-transform: rotate(0deg); }
+	100% { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes spin{
+	0% { -o-transform: rotate(0deg); }
+	100% { -o-transform: rotate(360deg); }
+}
+@keyframes spin{
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+#load-button .icon:before{
+	display: block;
+	line-height: 40px;
+}
+
+#load-button.loading{ pointer-events: none; }
+#load-button.loading span{ display: none; }
+#load-button.loading .icon{ display: block; }
+#load-button.disabled{ display: none; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	education list end										*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

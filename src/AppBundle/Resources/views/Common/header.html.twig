@@ -1,0 +1,9 @@
+{# src/AppBundle/Resources/views/Common/header.html.twig #}
+<header id="header">
+    <a href="{{ path('index') }}" class="logo">
+        <img src="{{ asset('bundles/app/images/logo.png') }}" alt="Trading Time Logo">
+    </a>
+    <nav id="menu">
+        {{ knp_menu_render('main', { 'currentClass': 'active' }) }}
+    </nav>
+</header>

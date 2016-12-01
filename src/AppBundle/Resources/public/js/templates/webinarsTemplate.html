@@ -1,0 +1,25 @@
+<section class="row top-event">
+	<h2>Top Event</h2>
+	<h3>{{ topVideo.snippet.title }}</h3>
+	<span class="separator"></span>
+	<p>{{ topVideo.snippet.description }}</p>
+	<div class="video">
+		<iframe src="http://www.youtube.com/embed/{{ topVideo.snippet.resourceId.videoId }}" frameborder="0"></iframe>
+	</div>
+</section>
+{{#groupBy 2 videos}}
+	<section class="row">
+		{{#each this}}
+			<article class="cell" data-video-id="{{ snippet.resourceId.videoId }}">
+				<h3>{{ snippet.title }}</h3>
+				<div class="preview">
+					<span class="play-button icon icon-play"></span>
+					<figure><img src="{{ snippet.thumbnails.high.url }}" alt="{{ snippet.title }}"></figure>
+				</div>
+				<div class="video"></div>
+			</article>
+		{{/each}}
+	</section>
+{{/groupBy}}
+
+

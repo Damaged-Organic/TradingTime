@@ -1,0 +1,60 @@
+{# src/AppBundle/Resources/views/State/education.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ metadata.title }} | {{ 'default.title'|trans }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ metadata.description }}" >
+    <meta name="robots" content="{{ metadata.robots }}">
+{% endblock %}
+
+{% block locale %}
+    <link rel="canonical" href="{{ url('education') }}" />
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/education.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+
+        {% include 'AppBundle:Common:header.html.twig' only %}
+
+        <main id="content" class="education sticky-footer clearfix">
+            <section class="section about">
+                <h1>{{ educationSection.title }}</h1>
+                <h3><span>{{ educationSection.subtitle }}</span></h3>
+                <span class="separator"></span>
+                {% if educationSection.fullDescription %}
+                    {{ educationSection.fullDescription|raw }}
+                {% endif %}
+            </section>
+            <div class="grid" id="education-list"></div>
+            <div class="link-button s160x40 loading" id="load-button">
+                <a href="#">
+                    <span>{{ 'education.load_more'|trans }}</span>
+                    <span class="icon icon-loading"></span>
+                </a>
+            </div>
+        </main>
+    </div>
+    <footer id="footer" class="sticky clearfix">
+
+        {% include 'AppBundle:Common:footer.html.twig' only %}
+
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+    <script src="{{ asset('bundles/app/js/helpers/helpers.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/mixins/loadTemplate.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/services/youtubeService.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/controllers/educationController.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/app/educationApp.js') }}"></script>
+{% endblock %}

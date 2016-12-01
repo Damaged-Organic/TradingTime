@@ -1,0 +1,231 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content .section{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#content.webinars .section > h3{
+	text-transform: capitalize;
+}
+#content.webinars .section > h3 > span{
+	display: inline-block;
+}
+#content.webinars .section > h3 > span:first-letter{
+	color: #41806c;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	layout end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about  start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.webinars .about h1{ margin-top: 40px; }
+.webinars .about p{ padding: 0 5%; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	about  end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	webinar registration start								*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#web-reg-holder{
+	width: 100%;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+#web-reg-holder h3{
+	margin: 40px auto 20px;
+}
+#webinar-reg-form{
+	width: 800px;
+	margin: 0 auto;
+	overflow: visible;
+}
+#webinar-reg-form .field-holder{
+	width: 310px;
+	float: left;
+}
+#webinar-reg-form .field-holder{
+	margin: 0 10px 0 0;
+}
+#webinar-reg-form .field-holder input{
+	height: 40px;
+}
+#webinar-reg-form label.error{
+	display: block;
+	width: 100%;
+	top: 40px;
+	text-align: center;
+}
+#webinar-reg-form button{
+	float: left;
+	margin: 0;
+}
+#webinar-reg-form button .loading{ font-size: 1.875em; }
+
+#response-holder{
+	width: 100%;
+	overflow: hidden;
+}
+#response-holder p{
+	line-height: 40px;
+	font-size: 1em;
+	text-align: center;
+}
+#response-holder.success p{ color: #4F8A10; }
+#response-holder.error p{ color: #D8000C; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	webinar registration end								*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	webinars list start										*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#webinars-list{
+	max-width: 1200px;
+	margin: 60px auto 20px;
+	overflow: hidden;
+}
+#webinars-list .row{
+	width: 100%;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+#webinars-list .cell{
+	width: 49%;
+	float: left;
+	margin-left: 2%;
+	overflow: hidden;
+}
+#webinars-list .row .cell:first-child{ margin-left: 0; }
+
+#webinars-list .cell h3{
+	text-transform: capitalize;
+	margin-bottom: 10px;
+}
+#webinars-list .preview,
+#webinars-list .video{
+	display: none;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+#webinars-list .preview{
+	display: block;
+	position: relative;
+}
+#webinars-list .preview:after{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	background: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+}
+#webinars-list .preview figure{
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#webinars-list .preview figure img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#webinars-list .video iframe{
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#webinars-list .preview .play-button{
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	margin: -30px 0 0 -30px;
+	text-align: center;
+	font-size: 3em;
+	color: #41806c;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+}
+#webinars-list .preview .play-button:before{
+	display: inline-block;
+	line-height: 60px;
+}
+#webinars-list .preview .play-button:hover{
+	color: #69cc7c;
+}
+
+#webinars-list .cell.active .preview{ display: none; }
+#webinars-list .cell.active .video{ display: block; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	webinars list end										*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	top event start											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#event{
+	display: block;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto 0px;
+	overflow: hidden;
+}
+#event h3 > span{
+	display: inline-block;
+	text-transform: capitalize;
+}
+#event h3 > span:first-letter{ color: #41806c; }
+#event p{ padding: 10px 5%; }
+
+#event-countdown{
+	width: 100%;
+	max-width: 600px;
+	margin: 20px auto 0px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #333233;
+}
+#event-countdown p{ margin: 0; }
+
+#webinars-list .top-event{
+	display: none;
+	margin-bottom: 80px;
+}
+#webinars-list .top-event p{ padding: 0 5% 20px; }
+#webinars-list .top-event .video{
+	display: block;
+	width: 70%;
+	height: auto;
+	margin: 0 auto;
+}
+#content .top-event .video iframe{
+	display: block;
+	width: 100%;
+	height: auto;
+	min-height: 400px;
+	overflow: hidden;
+}
+
+#webinars-list.event-start #event{ display: none; }
+#webinars-list.event-start .top-event{ display: block; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	top event end											*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

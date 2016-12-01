@@ -1,0 +1,20 @@
+img.admin-preview {
+    max-height: 500px;
+    max-width: 500px;
+}
+
+input[type="file"] {
+    padding-bottom: 40px;
+}
+
+th.sonata-ba-list-field-header {
+    width: 10px;
+}
+
+.vich-file .vich-buttons {
+    margin: 10px 0 10px 0;
+}
+
+.icheckbox_minimal {
+    height: 20px;
+}

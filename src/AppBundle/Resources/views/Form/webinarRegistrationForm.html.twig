@@ -1,0 +1,32 @@
+{# src/AppBundle/Resources/views/Form/webinarRegistrationForm.html.twig #}
+<form action="{{ path('webinar_register') }}" method="POST" id="webinar-reg-form" {{ form_enctype(webinarRegistrationForm) }}>
+    <div class="field-holder">
+        {{ form_widget(webinarRegistrationForm.name, {
+            'attr': {
+                'id': "reg-name",
+                'data-rule-required': "true", 'data-msg-required': 'webinar_registration.name.not_blank'|trans({}, "validators"),
+                'data-rule-minlength': "2", 'data-msg-minlength': 'webinar_registration.name.length_min'|trans({}, "validators"),
+                'data-rule-maxlength': "200", 'data-msg-maxlength': 'webinar_registration.name.length_max'|trans({}, "validators")
+            }
+        }) }}
+    </div>
+
+    <div class="field-holder">
+        {{ form_widget(webinarRegistrationForm.email, {
+            'attr': {
+                'id': "reg-email",
+                'data-rule-required': "true", 'data-msg-required': 'webinar_registration.email.not_blank'|trans({}, "validators"),
+                'data-rule-email': "true", 'data-msg-email': 'webinar_registration.email.valid'|trans({}, "validators")
+            }
+        }) }}
+    </div>
+
+    {{ form_widget(webinarRegistrationForm._token) }}
+
+    <button type="submit" class="link-button s160x40">
+        <a href="#">
+            <span>{{ 'webinar_registration.submit.label'|trans({}, 'forms') }}</span>
+            <span class="icon icon-loading loading"></span>
+        </a>
+    </button>
+</form>

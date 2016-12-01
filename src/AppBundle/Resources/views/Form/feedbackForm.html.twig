@@ -1,0 +1,46 @@
+{# src/AppBundle/Resources/views/Form/feedbackForm.html.twig #}
+<form action="{{ path('feedback_send') }}" method="POST" id="feedback-form" {{ form_enctype(feedbackForm) }}>
+    <div class="field-holder">
+        {{ form_label(feedbackForm.name) }}
+        {{ form_widget(feedbackForm.name, {
+            'attr': {
+                'id': "feedback-name",
+                'data-rule-required': "true", 'data-msg-required': 'feedback.name.not_blank'|trans({}, "validators"),
+                'data-rule-minlength': "2", 'data-msg-minlength': 'feedback.name.length_min'|trans({}, "validators"),
+                'data-rule-maxlength': "200", 'data-msg-maxlength': 'feedback.name.length_max'|trans({}, "validators")
+            }
+        }) }}
+    </div>
+
+    <div class="field-holder">
+        {{ form_label(feedbackForm.email) }}
+        {{ form_widget(feedbackForm.email, {
+            'attr': {
+                'id': "feedback-email",
+                'data-rule-required': "true", 'data-msg-required': 'feedback.email.not_blank'|trans({}, "validators"),
+                'data-rule-email': "true", 'data-msg-email': 'feedback.email.valid'|trans({}, "validators")
+            }
+        }) }}
+    </div>
+
+    <div class="field-holder">
+        {{ form_label(feedbackForm.message) }}
+        {{ form_widget(feedbackForm.message, {
+            'attr': {
+                'id': "feedback-message",
+                'data-rule-required': "true", 'data-msg-required': 'feedback.message.not_blank'|trans({}, "validators"),
+                'data-rule-minlength': "5", 'data-msg-minlength': 'feedback.message.length_min'|trans({}, "validators"),
+                'data-rule-maxlength': "1500", 'data-msg-maxlength': 'feedback.message.length_max'|trans({}, "validators")
+            }
+        }) }}
+    </div>
+
+    {{ form_widget(feedbackForm._token) }}
+
+    <button type="submit" class="link-button s160x40">
+        <a href="#">
+            <span>{{ 'feedback.submit.label'|trans({}, 'forms') }}</span>
+            <span class="icon icon-loading loading"></span>
+        </a>
+    </button>
+</form>

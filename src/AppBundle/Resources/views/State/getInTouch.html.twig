@@ -1,0 +1,56 @@
+{# src/AppBundle/Resources/views/State/getInTouch.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ metadata.title }} | {{ 'default.title'|trans }}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ metadata.description }}" >
+    <meta name="robots" content="{{ metadata.robots }}">
+{% endblock %}
+
+{% block locale %}
+    <link rel="canonical" href="{{ url('get_in_touch') }}" />
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("bundles/app/css/contacts.css") }}">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+
+        {% include 'AppBundle:Common:header.html.twig' only %}
+
+        <main id="content" class="contacts sticky-footer clearfix">
+            <section class="section" id="feedback">
+                <h1>{{ 'get_in_touch.title'|trans }}</h1>
+                <h2>{{ 'get_in_touch.slogan'|trans }} {{ 'get_in_touch.subtitle'|trans }}</h2>
+                <span class="separator"></span>
+                <div class="form-holder">
+                    <div id="response-holder"></div>
+
+                    {% render controller('AppBundle:Form:feedbackForm') %}
+
+                    <span class="or">{{ 'study.or'|trans }}</span>
+                    <a href="{{ global_personal_links.infusion }}" class="tell-us">{{ 'get_in_touch.form_link'|trans }}</a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer id="footer" class="sticky clearfix">
+
+        {% include 'AppBundle:Common:footer.html.twig' only %}
+
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="{{ asset('bundles/app/js/services/feedbackService.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/controllers/feedbackController.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/app/contactApp.js') }}"></script>
+{% endblock %}

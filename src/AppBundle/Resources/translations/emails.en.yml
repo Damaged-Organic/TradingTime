@@ -1,0 +1,10 @@
+# src/AppBundle/Resources/translations/emails.en.yml
+feedback:
+    subject:      Website feedback, %datetime%
+    sent_message: sent a new feedback message
+    at_date:      Message was sent at
+
+webinar_registration:
+    subject:               Webinar registration request, %datetime%
+    registered_to_webinar: requested a webinar registration
+    at_date:               Request was sent at

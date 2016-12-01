@@ -1,0 +1,131 @@
+# src/AppBundle/Resources/translations/messages.en.yml
+default:
+    title: 4TH Dimension by Trading Time
+
+404:
+    title:         Page Not Found
+    homepage_link: To the good part
+
+index:
+    4th_dimension:
+        title:    %accent_open%4TH%accent_close% Dimension
+        subtitle: by Trading Time
+        slogan: >
+            %paragraph_open%Using the fourth dimension to create a third spatial%paragraph_close%
+            %paragraph_open%Visualization from a two dimensional image%paragraph_close%
+        button:  Explore
+        esignal: >
+            Available on %link_open_esignal%eSignal%link_close_esignal% and %link_open_cqg%CQG%link_close_cqg%
+
+    pyramid:
+        top:          Multiple Time Frame Focus
+        top_left:     Range Deviation
+        top_right:    Volatility
+        bottom:       Divergence
+        bottom_left:  Step Theory
+        bottom_right: Time Averages
+
+    scroll_down: Scroll down to discover more
+
+track_my_trade:
+    stocks:      Stocks
+    indexes:     Indexes
+    bonds:       Bonds
+    commodities: Commodities
+    currencies:  Currencies
+
+    subscription:
+        monthly:  get monthly update for
+        lifetime: one-off purchase for
+
+    both:
+        slogan:   Track more, pay less
+        discount: subscribe to both and get %accent_open%25%%accent_close% off
+
+    button:
+        single: Subscribe now
+        both:   Get both updates
+
+    or: or
+
+    free_trial:
+        topline:    Contact us to get
+        period:     30 days
+        bottomline: Free subscription trial
+
+study:
+    subscription:
+        monthly:  purchase 4TH Dimension on %accent_open%eSignal%accent_close%
+        lifetime: one-off license%accent_open% +%accent_close% full email support for
+
+    button: get software
+
+    features:
+        indicator: 30 indicators and code
+        view:      complete technical picture
+        trend:     trend following tools
+        breakout:  breakout indicators
+        arrows:    divergence patters
+        clock:     visualize multiple timeframes
+
+    benefits:
+        clock:  50 years of experience
+        stocks: 7,500 American stocks
+        tool:   Framework for trading
+
+    or: or
+
+    list:
+        title: 4TH Dimension indicators
+        empty: Unfortunately, the list of indicators is empty for now
+        pdf:   Learn more
+        video: watch video
+
+books:
+    priced: priced
+    buy:    buy now
+    pdf:    see PDF preview
+    empty:  Unfortunately, no books for now
+
+education:
+    load_more: load more
+
+webinar:
+    announced:   Announced Event
+    to_webinars: Webinar events
+
+get_in_touch:
+    title:     Get In Touch
+    slogan:    Have something to say?
+    subtitle:  Leave a message for us
+    button:    Send message
+    form_link: tell us more about you
+
+licence:
+    disclaimer: >
+        The following licence agreement must be read in its entirety before purchasing and/using any information, products
+        and services contained on Trading-Time.com:
+    agreement:
+        sign:   I have read and accept this Agreement
+        button: I agree
+    button: Licence agreement
+
+footer: >
+    © 4TH Dimension by Trading Time. Web Production by %link_open%%developers_agency_name%%link_close%, 2015 - %current_year%. All rights reserved.
+    Usage of the website personal materials without author's permission is prohibited.
+
+payment:
+    order:         Your order:
+    homepage_link: Back to homepage
+
+    success:
+        title: Successful payment!
+        text: >
+            Dear %first_name% %last_name%! Your order was successfully completed. The administration will contact you
+            shortly on details.
+
+    fail:
+        title: Purchase failed...
+        text: >
+            Dear %first_name% %last_name%! Unfortunately, there has been some issues with your order. Please,
+            contact the administration on this issue.

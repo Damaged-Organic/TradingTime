@@ -1,0 +1,38 @@
+{# src/Application/Sonata/UserBundle/Resources/views/Admin/Security/login.html.twig #}
+{% extends "ApplicationSonataUserBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="login">
+            <h1>Dashboard</h1>
+
+            <form action="{{ path("sonata_user_admin_security_check") }}" method="post">
+
+                {% if error %}
+                    <div class="alert alert-error">{{ error|trans({}, 'SonataUserBundle') }}</div>
+                {% endif %}
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                <p><input type="text" id="username" name="_username" value="{{ last_username }}" class="big sonata-medium" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}"/></p>
+
+                <p><input type="password" id="password" name="_password" class="big sonata-medium" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}"/></p>
+
+                <div id="rest">
+                    <p class="remember_me">
+                        <label>
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                        </label>
+                    </p>
+
+                    <input type="submit" class="btn btn-primary" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                </div>
+            </form>
+        </div>
+
+        <div class="login-help">
+            <p>You can login to the dashboard or <a href="{{ path('index') }}">move back to the website</a></p>
+        </div>
+    </div>
+{% endblock %}
