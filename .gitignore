@@ -4,6 +4,7 @@
 *.csr
 *.key
 *.zip
+*.sql
 
 /app/bootstrap.php.cache
 /app/phpunit.xml
