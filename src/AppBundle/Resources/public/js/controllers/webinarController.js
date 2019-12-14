@@ -25,7 +25,7 @@ app.WebinarController = (function(root){
 		this._events();
 		this.youtubeService = new app.YoutubeService(playlistId);
 		
-		this.getTemplate("http://trading-time.dev/bundles/app/js/templates/webinarsTemplate.html", $.proxy(function(tpl){
+		this.getTemplate("http://trading-time.com/bundles/app/js/templates/webinarsTemplate.html", $.proxy(function(tpl){
 			this.template = tpl;
 		}, this));
 	}

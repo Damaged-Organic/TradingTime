@@ -32,6 +32,20 @@ class LoadTestimonial implements FixtureInterface
 
         // ---
 
+        $testimonial_4 = (new Testimonial)
+            ->setQuote("Mister Shaun gave me advice about gold, very good advice, I should trade it all the time!")
+            ->setAuthor("The World's Fastest Indian");
+        $manager->persist($testimonial_4);
+
+        // ---
+
+        $testimonial_5 = (new Testimonial)
+            ->setQuote("Mister Shaun gave me advice about gold, very good advice, I should trade it all the time!")
+            ->setAuthor("The World's Fastest Indian");
+        $manager->persist($testimonial_5);
+
+        // ---
+
         $manager->flush();
     }
 }

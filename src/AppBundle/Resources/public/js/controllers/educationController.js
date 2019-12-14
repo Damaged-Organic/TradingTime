@@ -27,7 +27,7 @@ app.EducationController = (function(root){
 		this._events();
 		this.youtubeService = new app.YoutubeService(playlistId, 4);
 		
-		this.getTemplate("http://trading-time.dev/bundles/app/js/templates/educationTemplate.html", $.proxy(function(tpl){
+		this.getTemplate("http://trading-time.com/bundles/app/js/templates/educationTemplate.html", $.proxy(function(tpl){
 			this.template = tpl;
 		}, this));
 	}
