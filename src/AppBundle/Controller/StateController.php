@@ -26,7 +26,7 @@ class StateController extends Controller implements PageInitInterface
     {
         /* Quick IE detection */
         $userAgent = strtoupper($request->server->get('HTTP_USER_AGENT'));
-        $isFuckwit = ( strpos($userAgent, "MSIE") !== FALSE || strpos($userAgent, "TRIDENT") !== FALSE )
+        $isUseless = ( strpos($userAgent, "MSIE") !== FALSE || strpos($userAgent, "TRIDENT") !== FALSE )
             ? TRUE
             : FALSE;
 
@@ -44,7 +44,7 @@ class StateController extends Controller implements PageInitInterface
         $testimonials = $manager->getRepository('AppBundle:Testimonial')->findAll();
 
         return $this->render('AppBundle:State:index.html.twig', [
-            'isFuckwit'    => $isFuckwit,
+            'isUseless'    => $isUseless,
             'metadata'     => $this->get('app.metadata')->getCurrentMetadata(),
             'sections'     => $sections,
             'services'     => $services,

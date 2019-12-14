@@ -15,7 +15,7 @@ index:
             %paragraph_open%Visualization from a two dimensional image%paragraph_close%
         button:  Explore
         esignal: >
-            Available on %link_open_esignal%eSignal%link_close_esignal% and %link_open_cqg%CQG%link_close_cqg%
+            Available on %link_open_esignal%eSignal%link_close_esignal%, %link_open_cqg%CQG%link_close_cqg% and %link_open_stockcharts%Stockcharts%link_close_stockcharts%
 
     pyramid:
         top:          Multiple Time Frame Focus

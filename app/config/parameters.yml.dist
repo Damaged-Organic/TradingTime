@@ -1,20 +1,32 @@
-# This file is a "template" of what your parameters.yml file should look like
+# This file is auto-generated during the composer install
 parameters:
+    # Database
     database_driver:   pdo_mysql
-    database_host:     127.0.0.1
-    database_port:     ~
-    database_name:     symfony
-    database_user:     root
-    database_password: ~
-    # You should uncomment this if you want use pdo_sqlite
-    # database_path: "%kernel.root_dir%/data.db3"
-
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
-
-    locale:            en
-
-    # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    database_host:     localhost
+    database_port:
+    database_name:
+    database_user:
+    database_password:
+    # Mailer
+    mailer_transport: smtp
+    mailer_host:
+    mailer_user:
+    mailer_password:
+    # Specific
+    domain:
+    locale: en
+    # Personal links
+    personal_links:
+        twitter:     https://twitter.com/fdimension4
+        youtube:     https://www.youtube.com/channel/UC--oQaSUKAylJcJ3nQ3STeQ
+        linkedin:    https://www.linkedin.com/profile/view?id=5554737
+        esignal:     http://www.esignal.com/partners/add-on-formula-studies/trading-time.aspx?tc=
+        stockcharts: https://stockcharts.com
+        cqg:         http://www.cqg.com
+        infusion:    https://xg259.infusionsoft.com/app/form/689796c630abfb8fa6d6560886949b7f
+    # Developers
+    developers_agency:
+        name: CHEERS
+        link: http://cheersunlimited.com.ua
+    # Token
+    secret:

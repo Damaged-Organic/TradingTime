@@ -42,7 +42,8 @@
                             {{ 'index.4th_dimension.esignal'
                                 |trans({
                                     '%link_open_esignal%': '<a href="' ~ global_personal_links.esignal ~ '" target="_blank">', '%link_close_esignal%': '</a>',
-                                    '%link_open_cqg%': '<a href="' ~ global_personal_links.cqg ~ '" target="_blank">', '%link_close_cqg%': '</a>'
+                                    '%link_open_cqg%': '<a href="' ~ global_personal_links.cqg ~ '" target="_blank">', '%link_close_cqg%': '</a>',
+                                    '%link_open_stockcharts%': '<a href="' ~ global_personal_links.stockcharts ~ '" target="_blank">', '%link_close_stockcharts%': '</a>'
                                 })
                                 |raw
                             }}
@@ -54,7 +55,7 @@
                         </ul>
                     </div>
                 </section>
-                <div class="intro-4D {{ ( isFuckwit ) ? "ie" : null }}">
+                <div class="intro-4D {{ ( isUseless ) ? "ie" : null }}">
                     <div class="inner">
                         <div id="pyramide-holder">
                             <div class="circle"></div>
